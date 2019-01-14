@@ -12,6 +12,10 @@ from model import TrieNode
 from utils import get_stopwords, load_dictionary, generate_ngram, save_model, load_model
 from config import basedir
 
+import sys
+reload(sys)
+sys.setdefaultencoding("utf-8")
+
 
 def load_data(filename, stopwords):
     """
@@ -64,7 +68,7 @@ if __name__ == "__main__":
     print("\n----\n", '增加了 %d 个新词, 词语和得分分别为: \n' % len(add_word))
     print('#############################')
     for word, score in add_word.items():
-        print(word + ' ---->  ', score)
+        print(u'{0} ---->  {1}'.format(word, score))
     print('#############################')
 
     # 前后效果对比

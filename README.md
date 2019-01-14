@@ -1,7 +1,12 @@
 
 
 # 中文分词新词发现
-python3利用互信息和左右信息熵的中文分词新词发现
+利用互信息和左右信息熵的中文分词新词发现
+
+本项目是[Chinese\_segment\_augment](https://github.com/zhanzecheng/Chinese_segment_augment)的fork分支，主要将原项目中子节点的存储由list改为哈希表，子节点查找时间复杂度由O(N)将为O(1)
+
+# 支持版本
+python2.7及以上
 
 简介
 ========
@@ -14,8 +19,8 @@ python3利用互信息和左右信息熵的中文分词新词发现
 
 使用配置
 ========
-    git clone https://github.com/zhanzecheng/Chinese_segment_augment.git
     pip3 install jieba
+    git clone https://github.com/zhanzecheng/Chinese_segment_augment.git
     
     
 使用方式
@@ -74,6 +79,8 @@ python3利用互信息和左右信息熵的中文分词新词发现
 
 感谢
 ========
-10/21/2018 感谢[caomaocao](https://github.com/caomaocao) 对代码遵守pep8规范、增加pipenv依赖管理和工程化的贡献
+01/19/2019 感谢[zhanzecheng](https://github.com/zhanzecheng)贡献原版代码
 
-09/29/2018 感谢[jiangzhonglian](https://github.com/jiangzhonglian) 对代码进行的精简和注释补充
+# 彩蛋
+========
+Jax是武器大师贾克斯的英文名字，因为比较喜欢蛮王所以本来想起个泰达米尔的名字，但是太长了所以就挑了个短的命名。

@@ -5,7 +5,16 @@
 # @File    : utils.py
 # @Software: PyCharm
 """
+import sys
 import pickle
+
+PYTHON_VERSION = sys.version_info[0]
+
+
+def get_div(a, b):
+    if b == 0:
+        return 0.0
+    return a*1.0/b
 
 
 def get_stopwords():
@@ -35,7 +44,7 @@ def load_dictionary(filename):
                 line_list = line.strip().split(' ')
                 # 规定最少词频
                 if int(line_list[1]) > 2:
-                    word_freq[line_list[0]] = line_list[1]
+                    word_freq[line_list[0]] = int(line_list[1])
             except IndexError as e:
                 print(line)
                 continue
