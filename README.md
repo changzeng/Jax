@@ -1,16 +1,14 @@
-
-
 # 中文分词新词发现
+
 利用互信息和左右信息熵的中文分词新词发现
 
 本项目是[Chinese\_segment\_augment](https://github.com/zhanzecheng/Chinese_segment_augment)的fork分支，主要将原项目中子节点的存储由list改为哈希表，子节点查找时间复杂度由O(N)将为O(1)
 
 # 支持版本
+
 python2.7及以上
 
 # 简介
-
-========
 
 * 使用[jieba分词](https://github.com/fxsjy/jieba)为基本分词组件
 * 针对用户给出的文本，利用信息熵进行新词发现
@@ -21,19 +19,16 @@ python2.7及以上
 
 # 使用配置
 
-========
-
     pip3 install jieba
     git clone https://github.com/zhanzecheng/Chinese_segment_augment.git
     
     
 # 使用方式
 
-========
-
     from model import TrieNode
 
 # 得到 TOP5 得分的新词
+
     # result里面存储的是所有新词和其得分，add_word里面是top5
     result, add_word = root.wordFind(5)
 
@@ -42,8 +37,6 @@ python2.7及以上
 具体细节请参考demo_run.py
 
 # 效果说明
-
-========
 
 初始语句：
 
@@ -72,8 +65,6 @@ python2.7及以上
 
 # 方法解释
 
-========
-
 * 先使用jieba分词对demo.txt做粗略分词
 * 使用 3 gram 的方式来构建节点，并使用词典树对存储分词，如
 
@@ -89,12 +80,8 @@ python2.7及以上
 
 # 感谢
 
-========
-
 01/19/2019 感谢[zhanzecheng](https://github.com/zhanzecheng)贡献原版代码
 
 # 彩蛋
-
-========
 
 Jax是武器大师贾克斯的英文名字，因为比较喜欢蛮王所以本来想起个泰达米尔的名字，但是太长了所以就挑了个短的命名。
