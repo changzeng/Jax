@@ -7,6 +7,7 @@
 """
 import utils
 import math
+import heapq
 
 
 class Node(object):
@@ -214,23 +215,11 @@ class TrieNode(object):
         for key, values in bi.items():
             result[key] = (values[0] + min(left[key], right[key])) * values[1]
 
-        result = sorted(result.items(), key=lambda x: x[1], reverse=True)
+        result = heapq.nlargest(N, result.items(), key=lambda x: x[1])
 
-        dict_list = [result[0][0]]
         add_word = {}
-        new_word = "".join(dict_list[0].split('_'))
-        add_word[new_word] = result[0][1]
-
-        for d in result[1: N]:
-            flag = True
-            for tmp in dict_list:
-                pre = tmp.split('_')[0]
-                if d[0].split('_')[-1] == pre or "".join(tmp.split('_')) in "".join(d[0].split('_')):
-                    flag = False
-                    break
-            if flag:
-                new_word = "".join(d[0].split('_'))
-                add_word[new_word] = d[1]
-                dict_list.append(d[0])
+        for d in result:
+            new_word = "".join(d[0].split('_'))
+            add_word[new_word] = d[1]
 
         return result, add_word
